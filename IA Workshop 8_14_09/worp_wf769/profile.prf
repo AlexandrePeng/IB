@@ -1,0 +1,13 @@
+; worp_html\worp_wf7new
+
+;Size of the cell for Logo in banner.html
+cellWidth = 200
+cellHeight = 70
+
+; if it Custom Colors or Color Scheme
+; 1 - color scheme, 2 - custom colors
+colorType = 2
+
+;default folder for design
+originFolder = worp_html/worp_wf7new
+bannerHeight=70

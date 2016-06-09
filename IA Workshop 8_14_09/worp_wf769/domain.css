@@ -1,0 +1,55 @@
+/* $Revision:   1.0  $: */
+/* worp0/domain.css */
+
+.domain {
+    background-color : #BCBCBC;
+/*    background-image: url(wfrel5dombkgnd.gif);*/
+    font-family : Arial, Helvetica, Sans-Serif;
+    font-size : 12px;
+/*    font-weight:600;*/
+    text-decoration: none;
+    color: #000000;
+}
+.domainsFor{
+    font-family:Arial,Helvetica,Sans-Serif;
+    font-size:12px;
+    font-weight:600;
+    color:#000000;
+}
+.prvlink {
+    color: "#000000";
+    font-family : Arial, Helvetica, Sans-Serif;
+    font-size : 11px;
+    font-weight: 600;
+}
+.prvvisited {
+    color: "#336699";
+    font-family : Arial, Helvetica, Sans-Serif;
+    font-size : 11px;
+    font-weight: 600;
+}
+.prvhover {
+    color: "#FFCC33";
+    font-family : Arial, Helvetica, Sans-Serif;
+    font-size : 11px;
+    font-weight: 600;
+}
+A {
+    font-family : Arial, Helvetica, Sans-Serif;
+    font-size : 11px;
+    font-weight: 600;
+    text-decoration: none;
+}
+A:LINK {
+    color: #000000;
+}
+A:VISITED {
+    color: #000000;
+}
+A:ACTIVE {
+    color: #FFCC33;
+}
+A:HOVER {
+    color: #FFCC33;
+}
+

@@ -1,0 +1,55 @@
+A {
+font-family : Arial,Helvetica,Sans-Serif ;
+text-decoration : none ;
+font-weight : 600 ;
+font-size : 11px ;
+}
+
+A:HOVER {
+color : EDC31B ;
+}
+
+.bg4 {
+background-color : FFFFFF ;
+}
+
+.bg3 {
+background-color : FFFFFF ;
+}
+
+.bg2 {
+background-color : FFFFFF ;
+}
+
+.bg1 {
+background-image : url('banner_01.gif') ;
+background-color : FFFFFF ;
+}
+
+A:LINK {
+color : 000000 ;
+}
+
+.message {
+color : #0000FF ;
+font-style : Plain ;
+font-family : Arial ;
+background-color : #FFFFFF ;
+font-weight : 600 ;
+font-size : 11px ;
+}
+
+A:VISITED {
+color : 000000 ;
+}
+
+A:ACTIVE {
+color : B8510C ;
+}
+
+.text {
+color : 000000 ;
+font-family : Arial ;
+font-size : 11px ;
+}
+

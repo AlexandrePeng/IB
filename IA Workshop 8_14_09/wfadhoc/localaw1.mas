@@ -1,0 +1,1240 @@
+FILENAME=LocalAW, SUFFIX=SSAS    , $
+  SEGMENT=LOCALAW1, SEGTYPE=S0, $
+ 
+$ MEASURES FOR CUBE LocalAW
+    FIELDNAME=Internet_Sales_Amount, ALIAS='Internet Sales Amount', USAGE=P12.2MB, ACTUAL=P8,
+      MISSING=ON,
+      TITLE='Internet Sales Amount',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Internet_Order_Quantity, ALIAS='Internet Order Quantity', USAGE=I11,, ACTUAL=I4,
+      MISSING=ON,
+      TITLE='Internet Order Quantity',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Internet_Extended_Amount, ALIAS='Internet Extended Amount', USAGE=P12.2MB, ACTUAL=P8,
+      MISSING=ON,
+      TITLE='Internet Extended Amount',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Internet_Tax_Amount, ALIAS='Internet Tax Amount', USAGE=P11.2MB, ACTUAL=P8,
+      MISSING=ON,
+      TITLE='Internet Tax Amount',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Internet_Freight_Cost, ALIAS='Internet Freight Cost', USAGE=P10.2MB, ACTUAL=P8,
+      MISSING=ON,
+      TITLE='Internet Freight Cost',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Internet_Total_Product_Cost, ALIAS='Internet Total Product Cost', USAGE=P12.2MB, ACTUAL=P8,
+      MISSING=ON,
+      TITLE='Internet Total Product Cost',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Internet_Standard_Product_Cost, ALIAS='Internet Standard Product Cost', USAGE=P12.2MB, ACTUAL=P8,
+      MISSING=ON,
+      TITLE='Internet Standard Product Cost',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Order_Quantity, ALIAS='Order Quantity', USAGE=I11,, ACTUAL=I4,
+      MISSING=ON,
+      TITLE='Order Quantity',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Extended_Amount, ALIAS='Extended Amount', USAGE=D18.2, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Extended Amount',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Standard_Product_Cost, ALIAS='Standard Product Cost', USAGE=D18.2, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Standard Product Cost',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Total_Product_Cost, ALIAS='Total Product Cost', USAGE=D18.2, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Total Product Cost',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Sales_Amount, ALIAS='Sales Amount', USAGE=D18.2, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Sales Amount',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Tax_Amount, ALIAS='Tax Amount', USAGE=D18.2, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Tax Amount',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Freight_Cost, ALIAS='Freight Cost', USAGE=D18.2, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Freight Cost',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Sales_Amount_Quota, ALIAS='Sales Amount Quota', USAGE=P10MB, ACTUAL=P8,
+      MISSING=ON,
+      TITLE='Sales Amount Quota',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Amount, ALIAS=Amount, USAGE=D18.2, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Amount',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Internet_Gross_Profit, ALIAS='Internet Gross Profit', USAGE=D13.3, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Internet Gross Profit',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Internet_Gross_Profit_Margin, ALIAS='Internet Gross Profit Margin', USAGE=D20.17, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Internet Gross Profit Margin',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Internet_Ratio_to_All_Products, ALIAS='Internet Ratio to All Products', USAGE=D3.0, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Internet Ratio to All Products',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Internet_Ratio_to_Parent_Product, ALIAS='Internet Ratio to Parent Product', USAGE=D3.0, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Internet Ratio to Parent Product',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Gross_Profit, ALIAS='Gross Profit', USAGE=D19.9, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Gross Profit',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Gross_Profit_Margin, ALIAS='Gross Profit Margin', USAGE=D20.17, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Gross Profit Margin',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Expense_to_Revenue_Ratio, ALIAS='Expense to Revenue Ratio', USAGE=D20.17, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Expense to Revenue Ratio',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Ratio_to_All_Products, ALIAS='Ratio to All Products', USAGE=D3.0, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Ratio to All Products',
+      PROPERTY=MEASURE,  $
+    FIELDNAME=Ratio_to_Parent_Product, ALIAS='Ratio to Parent Product', USAGE=D3.0, ACTUAL=D8,
+      MISSING=ON,
+      TITLE='Ratio to Parent Product',
+      PROPERTY=MEASURE,  $
+ 
+ DIMENSION=[Account], CAPTION='Account', $
+  HIERARCHY=[Account].[Accounts], CAPTION='Accounts', HRY_DIMENSION=[Account], HRY_STRUCTURE=RECURSIVE, $
+  HIERARCHY=[Account].[Account], CAPTION='Account', HRY_DIMENSION=[Account], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Account].[Account Number], CAPTION='Account Number', HRY_DIMENSION=[Account], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Account].[Account Type], CAPTION='Account Type', HRY_DIMENSION=[Account], HRY_STRUCTURE=STANDARD, $
+ 
+ 
+    FIELDNAME=Accounts, USAGE=A143, ACTUAL=A143,
+      MISSING=ON,
+      TITLE='Accounts Member Unique Name',
+      WITHIN='*[Account].[Accounts]',
+      PROPERTY=UID,  $
+    FIELDNAME=Accounts_name, USAGE=A64, ACTUAL=A64,
+      MISSING=ON,
+      TITLE='Accounts Member Name',
+      REFERENCE=LOCALAW1.Accounts, PROPERTY=NAME,  $
+    FIELDNAME=Accounts_lvlno, USAGE=I2L, ACTUAL=I4,
+      MISSING=ON,
+      TITLE='Accounts Member Level Number',
+      REFERENCE=LOCALAW1.Accounts, PROPERTY=LEVEL_NUMBER,  $
+    FIELDNAME=Accounts_parent, USAGE=A143, ACTUAL=A143,
+      MISSING=ON,
+      TITLE='Accounts Parent Unique Name',
+      REFERENCE=LOCALAW1.Accounts, PROPERTY=PARENT_OF,  $
+    FIELDNAME=Accounts_parent_lvlno, USAGE=I2L, ACTUAL=I4,
+      MISSING=ON,
+      TITLE='Accounts Parent Level',
+      REFERENCE=LOCALAW1.Accounts, PROPERTY=PARENT_LEVEL_NUMBER,  $
+    FIELDNAME=Accounts_children_card, USAGE=I9, ACTUAL=I4,
+      MISSING=ON,
+      TITLE='Accounts Member Children Cardinality',
+      REFERENCE=LOCALAW1.Accounts, PROPERTY=CHILDREN_CARDINALITY,  $
+    FIELDNAME=Accounts_caption, USAGE=A60, ACTUAL=A60,
+      MISSING=ON,
+      TITLE='Accounts Member Caption',
+      REFERENCE=LOCALAW1.Accounts, PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Account].[Accounts].[Account Level 06] PROPERTIES
+    FIELDNAME=Account_Type, ALIAS='Account Type', USAGE=A12, ACTUAL=A12,
+      MISSING=ON,
+      TITLE='Account Type',
+      REFERENCE=LOCALAW1.Accounts, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Accounts1, ALIAS=Accounts, USAGE=A29, ACTUAL=A29,
+      MISSING=ON,
+      TITLE='Accounts',
+      REFERENCE=LOCALAW1.Accounts, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Account_Number, ALIAS='Account Number', USAGE=A4, ACTUAL=A4,
+      MISSING=ON,
+      TITLE='Account Number',
+      REFERENCE=LOCALAW1.Accounts, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Account_Accounts_SETS, USAGE=A11, ACTUAL=A11,
+      MISSING=ON,
+      TITLE='Account Accounts Sets',
+      REFERENCE=*[Account].[Accounts], PROPERTY=SETS,  $
+ 
+ DIMENSION=[Customer], CAPTION='Customer', $
+  HIERARCHY=[Customer].[Customer Geography], CAPTION='Customer Geography', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Address], CAPTION='Address', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[City], CAPTION='City', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Commute Distance], CAPTION='Commute Distance', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Country], CAPTION='Country', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Customer], CAPTION='Customer', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Date of First Purchase], CAPTION='Date of First Purchase', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Education], CAPTION='Education', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Email Address], CAPTION='Email Address', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Gender], CAPTION='Gender', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Home Owner], CAPTION='Home Owner', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Marital Status], CAPTION='Marital Status', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Number of Cars Owned], CAPTION='Number of Cars Owned', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Number of Children At Home], CAPTION='Number of Children At Home', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Occupation], CAPTION='Occupation', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Phone], CAPTION='Phone', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Postal Code], CAPTION='Postal Code', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[State-Province], CAPTION='State-Province', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Total Children], CAPTION='Total Children', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Customer].[Yearly Income], CAPTION='Yearly Income', HRY_DIMENSION=[Customer], HRY_STRUCTURE=STANDARD, $
+ 
+ 
+    FIELDNAME=Country, ALIAS=Country, USAGE=A14, ACTUAL=A14,
+      MISSING=ON,
+      TITLE='Country',
+      WITHIN='*[Customer].[Customer Geography]',
+      PROPERTY=CAPTION,  $
+    FIELDNAME=State_Province, ALIAS=State-Province, USAGE=A19, ACTUAL=A19,
+      MISSING=ON,
+      TITLE='State-Province',
+      WITHIN='Country',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Customer].[Customer Geography].[State-Province] PROPERTIES
+    FIELDNAME=Country1, ALIAS=Country, USAGE=A14, ACTUAL=A14,
+      MISSING=ON,
+      TITLE='Country',
+      REFERENCE=State_Province, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=City, ALIAS=City, USAGE=A21, ACTUAL=A21,
+      MISSING=ON,
+      TITLE='City',
+      WITHIN='State_Province',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Customer].[Customer Geography].[City] PROPERTIES
+    FIELDNAME=State_Province1, ALIAS=State-Province, USAGE=A19, ACTUAL=A19,
+      MISSING=ON,
+      TITLE='State-Province',
+      REFERENCE=LOCALAW1.City, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Postal_Code, ALIAS='Postal Code', USAGE=A10, ACTUAL=A10,
+      MISSING=ON,
+      TITLE='Postal Code',
+      WITHIN='City',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Customer].[Customer Geography].[Postal Code] PROPERTIES
+    FIELDNAME=City1, ALIAS=City, USAGE=A21, ACTUAL=A21,
+      MISSING=ON,
+      TITLE='City',
+      REFERENCE=Postal_Code, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Customer, ALIAS=Customer, USAGE=A32, ACTUAL=A32,
+      MISSING=ON,
+      TITLE='Customer',
+      WITHIN='Postal_Code',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Customer].[Customer Geography].[Customer] PROPERTIES
+    FIELDNAME=Date_of_First_Purchase, ALIAS='Date of First Purchase', USAGE=A18, ACTUAL=A18,
+      MISSING=ON,
+      TITLE='Date of First Purchase',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Phone, ALIAS=Phone, USAGE=A19, ACTUAL=A19,
+      MISSING=ON,
+      TITLE='Phone',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Number_of_Cars_Owned, ALIAS='Number of Cars Owned', USAGE=A1, ACTUAL=A1,
+      MISSING=ON,
+      TITLE='Number of Cars Owned',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Occupation, ALIAS=Occupation, USAGE=A14, ACTUAL=A14,
+      MISSING=ON,
+      TITLE='Occupation',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Education, ALIAS=Education, USAGE=A19, ACTUAL=A19,
+      MISSING=ON,
+      TITLE='Education',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Number_of_Children_At_Home, ALIAS='Number of Children At Home', USAGE=A1, ACTUAL=A1,
+      MISSING=ON,
+      TITLE='Number of Children At Home',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Total_Children, ALIAS='Total Children', USAGE=A1, ACTUAL=A1,
+      MISSING=ON,
+      TITLE='Total Children',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Yearly_Income, ALIAS='Yearly Income', USAGE=A33, ACTUAL=A33,
+      MISSING=ON,
+      TITLE='Yearly Income',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Email_Address, ALIAS='Email Address', USAGE=A33, ACTUAL=A33,
+      MISSING=ON,
+      TITLE='Email Address',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Marital_Status, ALIAS='Marital Status', USAGE=A7, ACTUAL=A7,
+      MISSING=ON,
+      TITLE='Marital Status',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Gender, ALIAS=Gender, USAGE=A6, ACTUAL=A6,
+      MISSING=ON,
+      TITLE='Gender',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Home_Owner, ALIAS='Home Owner', USAGE=A3, ACTUAL=A3,
+      MISSING=ON,
+      TITLE='Home Owner',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Commute_Distance, ALIAS='Commute Distance', USAGE=A10, ACTUAL=A10,
+      MISSING=ON,
+      TITLE='Commute Distance',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Postal_Code1, ALIAS='Postal Code', USAGE=A10, ACTUAL=A10,
+      MISSING=ON,
+      TITLE='Postal Code',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Address, ALIAS=Address, USAGE=A33, ACTUAL=A33,
+      MISSING=ON,
+      TITLE='Address',
+      REFERENCE=LOCALAW1.Customer, PROPERTY=ATTRIBUTE,  $
+ 
+ DIMENSION=[Date], CAPTION='Date', $
+  HIERARCHY=[Date].[Calendar], CAPTION='Calendar', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Fiscal], CAPTION='Fiscal', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Calendar Quarter of Year], CAPTION='Calendar Quarter of Year', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Calendar Semester of Year], CAPTION='Calendar Semester of Year', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Calendar Year], CAPTION='Calendar Year', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Date], CAPTION='Date', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Day Name], CAPTION='Day Name', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Day of Month], CAPTION='Day of Month', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Day of Week], CAPTION='Day of Week', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Day of Year], CAPTION='Day of Year', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Fiscal Quarter of Year], CAPTION='Fiscal Quarter of Year', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Fiscal Semester of Year], CAPTION='Fiscal Semester of Year', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Fiscal Year], CAPTION='Fiscal Year', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Month of Year], CAPTION='Month of Year', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Date].[Week of Year], CAPTION='Week of Year', HRY_DIMENSION=[Date], HRY_STRUCTURE=STANDARD, $
+ 
+ 
+    FIELDNAME=Calendar_Year, ALIAS='Calendar Year', USAGE=A7, ACTUAL=A7,
+      TITLE='Calendar Year',
+      WITHIN='*[Date].[Calendar]',
+      PROPERTY=CAPTION,  $
+    FIELDNAME=Calendar_Semester, ALIAS='Calendar Semester', USAGE=A10, ACTUAL=A10,
+      TITLE='Calendar Semester',
+      WITHIN='Calendar_Year',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Date].[Calendar].[Calendar Semester] PROPERTIES
+    FIELDNAME=Calendar_Year1, ALIAS='Calendar Year', USAGE=A7, ACTUAL=A7,
+      TITLE='Calendar Year',
+      REFERENCE=Calendar_Semester, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Calendar_Quarter, ALIAS='Calendar Quarter', USAGE=A10, ACTUAL=A10,
+      TITLE='Calendar Quarter',
+      WITHIN='Calendar_Semester',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Date].[Calendar].[Calendar Quarter] PROPERTIES
+    FIELDNAME=Fiscal_Quarter, ALIAS='Fiscal Quarter', USAGE=A10, ACTUAL=A10,
+      TITLE='Fiscal Quarter',
+      REFERENCE=Calendar_Quarter, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Calendar_Semester1, ALIAS='Calendar Semester', USAGE=A10, ACTUAL=A10,
+      TITLE='Calendar Semester',
+      REFERENCE=Calendar_Quarter, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Calendar_Semester_of_Year, ALIAS='Calendar Semester of Year', USAGE=A5, ACTUAL=A5,
+      TITLE='Calendar Semester of Year',
+      REFERENCE=Calendar_Quarter, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Calendar_Quarter_of_Year, ALIAS='Calendar Quarter of Year', USAGE=A5, ACTUAL=A5,
+      TITLE='Calendar Quarter of Year',
+      REFERENCE=Calendar_Quarter, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Month, ALIAS=Month, USAGE=A14, ACTUAL=A14,
+      TITLE='Month',
+      WITHIN='Calendar_Quarter',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Date].[Calendar].[Month] PROPERTIES
+    FIELDNAME=Calendar_Quarter1, ALIAS='Calendar Quarter', USAGE=A10, ACTUAL=A10,
+      TITLE='Calendar Quarter',
+      REFERENCE=LOCALAW1.Month, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Month_of_Year, ALIAS='Month of Year', USAGE=A9, ACTUAL=A9,
+      TITLE='Month of Year',
+      REFERENCE=LOCALAW1.Month, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Date, ALIAS=Date, USAGE=A18, ACTUAL=A18,
+      TITLE='Date',
+      WITHIN='Month',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Date].[Calendar].[Date] PROPERTIES
+    FIELDNAME=Day_of_Week, ALIAS='Day of Week', USAGE=A1, ACTUAL=A1,
+      TITLE='Day of Week',
+      REFERENCE=LOCALAW1.Date, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Day_Name, ALIAS='Day Name', USAGE=A9, ACTUAL=A9,
+      TITLE='Day Name',
+      REFERENCE=LOCALAW1.Date, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Day_of_Month, ALIAS='Day of Month', USAGE=A2, ACTUAL=A2,
+      TITLE='Day of Month',
+      REFERENCE=LOCALAW1.Date, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Day_of_Year, ALIAS='Day of Year', USAGE=A3, ACTUAL=A3,
+      TITLE='Day of Year',
+      REFERENCE=LOCALAW1.Date, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Week_of_Year, ALIAS='Week of Year', USAGE=A2, ACTUAL=A2,
+      TITLE='Week of Year',
+      REFERENCE=LOCALAW1.Date, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Month_Name, ALIAS='Month Name', USAGE=A14, ACTUAL=A14,
+      TITLE='Month Name',
+      REFERENCE=LOCALAW1.Date, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Fiscal_Year, ALIAS='Fiscal Year', USAGE=A7, ACTUAL=A7,
+      TITLE='Fiscal Year',
+      WITHIN='*[Date].[Fiscal]',
+      PROPERTY=CAPTION,  $
+    FIELDNAME=Fiscal_Semester, ALIAS='Fiscal Semester', USAGE=A10, ACTUAL=A10,
+      TITLE='Fiscal Semester',
+      WITHIN='Fiscal_Year',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Date].[Fiscal].[Fiscal Semester] PROPERTIES
+    FIELDNAME=Fiscal_Year1, ALIAS='Fiscal Year', USAGE=A7, ACTUAL=A7,
+      TITLE='Fiscal Year',
+      REFERENCE=Fiscal_Semester, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Fiscal_Quarter1, ALIAS='Fiscal Quarter', USAGE=A10, ACTUAL=A10,
+      TITLE='Fiscal Quarter',
+      WITHIN='Fiscal_Semester',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Date].[Fiscal].[Fiscal Quarter] PROPERTIES
+    FIELDNAME=Fiscal_Semester1, ALIAS='Fiscal Semester', USAGE=A10, ACTUAL=A10,
+      TITLE='Fiscal Semester',
+      REFERENCE=Fiscal_Quarter1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Fiscal_Semester_of_Year, ALIAS='Fiscal Semester of Year', USAGE=A5, ACTUAL=A5,
+      TITLE='Fiscal Semester of Year',
+      REFERENCE=Fiscal_Quarter1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Fiscal_Quarter_of_Year, ALIAS='Fiscal Quarter of Year', USAGE=A5, ACTUAL=A5,
+      TITLE='Fiscal Quarter of Year',
+      REFERENCE=Fiscal_Quarter1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Month1, ALIAS=Month, USAGE=A14, ACTUAL=A14,
+      TITLE='Month',
+      WITHIN='Fiscal_Quarter1',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Date].[Fiscal].[Month] PROPERTIES
+    FIELDNAME=Calendar_Quarter2, ALIAS='Calendar Quarter', USAGE=A10, ACTUAL=A10,
+      TITLE='Calendar Quarter',
+      REFERENCE=Month1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Month_of_Year1, ALIAS='Month of Year', USAGE=A9, ACTUAL=A9,
+      TITLE='Month of Year',
+      REFERENCE=Month1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Date1, ALIAS=Date, USAGE=A18, ACTUAL=A18,
+      TITLE='Date',
+      WITHIN='Month1',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Date].[Fiscal].[Date] PROPERTIES
+    FIELDNAME=Day_of_Week1, ALIAS='Day of Week', USAGE=A1, ACTUAL=A1,
+      TITLE='Day of Week',
+      REFERENCE=Date1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Day_Name1, ALIAS='Day Name', USAGE=A9, ACTUAL=A9,
+      TITLE='Day Name',
+      REFERENCE=Date1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Day_of_Month1, ALIAS='Day of Month', USAGE=A2, ACTUAL=A2,
+      TITLE='Day of Month',
+      REFERENCE=Date1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Day_of_Year1, ALIAS='Day of Year', USAGE=A3, ACTUAL=A3,
+      TITLE='Day of Year',
+      REFERENCE=Date1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Week_of_Year1, ALIAS='Week of Year', USAGE=A2, ACTUAL=A2,
+      TITLE='Week of Year',
+      REFERENCE=Date1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Month_Name1, ALIAS='Month Name', USAGE=A14, ACTUAL=A14,
+      TITLE='Month Name',
+      REFERENCE=Date1, PROPERTY=ATTRIBUTE,  $
+ 
+ DIMENSION=[Organization], CAPTION='Organization', $
+  HIERARCHY=[Organization].[Organizations], CAPTION='Organizations', HRY_DIMENSION=[Organization], HRY_STRUCTURE=RECURSIVE, $
+  HIERARCHY=[Organization].[Currency Code], CAPTION='Currency Code', HRY_DIMENSION=[Organization], HRY_STRUCTURE=STANDARD, $
+ 
+ 
+    FIELDNAME=Organizations, USAGE=A143, ACTUAL=A143,
+      MISSING=ON,
+      TITLE='Organizations Member Unique Name',
+      WITHIN='*[Organization].[Organizations]',
+      PROPERTY=UID,  $
+    FIELDNAME=Organizations_name, USAGE=A64, ACTUAL=A64,
+      MISSING=ON,
+      TITLE='Organizations Member Name',
+      REFERENCE=LOCALAW1.Organizations, PROPERTY=NAME,  $
+    FIELDNAME=Organizations_lvlno, USAGE=I2L, ACTUAL=I4,
+      MISSING=ON,
+      TITLE='Organizations Member Level Number',
+      REFERENCE=LOCALAW1.Organizations, PROPERTY=LEVEL_NUMBER,  $
+    FIELDNAME=Organizations_parent, USAGE=A143, ACTUAL=A143,
+      MISSING=ON,
+      TITLE='Organizations Parent Unique Name',
+      REFERENCE=LOCALAW1.Organizations, PROPERTY=PARENT_OF,  $
+    FIELDNAME=Organizations_parent_lvlno, USAGE=I2L, ACTUAL=I4,
+      MISSING=ON,
+      TITLE='Organizations Parent Level',
+      REFERENCE=LOCALAW1.Organizations, PROPERTY=PARENT_LEVEL_NUMBER,  $
+    FIELDNAME=Organizations_children_card, USAGE=I9, ACTUAL=I4,
+      MISSING=ON,
+      TITLE='Organizations Member Children Cardinality',
+      REFERENCE=LOCALAW1.Organizations, PROPERTY=CHILDREN_CARDINALITY,  $
+    FIELDNAME=Organizations_caption, USAGE=A60, ACTUAL=A60,
+      MISSING=ON,
+      TITLE='Organizations Member Caption',
+      REFERENCE=LOCALAW1.Organizations, PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Organization].[Organizations].[Organization Level 04] PROPERTIES
+    FIELDNAME=Organizations1, ALIAS=Organizations, USAGE=A24, ACTUAL=A24,
+      MISSING=ON,
+      TITLE='Organizations',
+      REFERENCE=LOCALAW1.Organizations, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Currency_Code, ALIAS='Currency Code', USAGE=A3, ACTUAL=A3,
+      MISSING=ON,
+      TITLE='Currency Code',
+      REFERENCE=LOCALAW1.Organizations, PROPERTY=ATTRIBUTE,  $
+ 
+ DIMENSION=[Product], CAPTION='Product', $
+  HIERARCHY=[Product].[Manufacture Time], CAPTION='Manufacture Time', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Product Categories], CAPTION='Product Categories', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Product Model Categories], CAPTION='Product Model Categories', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Product Model Lines], CAPTION='Product Model Lines', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Stock Level], CAPTION='Stock Level', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Category], CAPTION='Category', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Class], CAPTION='Class', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Color], CAPTION='Color', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Days to Manuf], CAPTION='Days to Manuf', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Dealer Price], CAPTION='Dealer Price', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[End Date], CAPTION='End Date', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Large Photo], CAPTION='Large Photo', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[List Price], CAPTION='List Price', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Model Name], CAPTION='Model Name', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Product], CAPTION='Product', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Product Key], CAPTION='Product Key', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Product Line], CAPTION='Product Line', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Reorder Point], CAPTION='Reorder Point', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Safety Stock Level], CAPTION='Safety Stock Level', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Size], CAPTION='Size', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Size Range], CAPTION='Size Range', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Standard Cost], CAPTION='Standard Cost', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Start Date], CAPTION='Start Date', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Status], CAPTION='Status', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Style], CAPTION='Style', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Subcategory], CAPTION='Subcategory', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+  HIERARCHY=[Product].[Weight], CAPTION='Weight', HRY_DIMENSION=[Product], HRY_STRUCTURE=STANDARD, $
+ 
+ 
+    FIELDNAME=Days_to_Manufacture, ALIAS='Days to Manufacture', USAGE=A1, ACTUAL=A1,
+      TITLE='Days to Manufacture',
+      WITHIN='*[Product].[Manufacture Time]',
+      PROPERTY=CAPTION,  $
+    FIELDNAME=Subcategory, ALIAS=Subcategory, USAGE=A17, ACTUAL=A17,
+      TITLE='Subcategory',
+      WITHIN='Days_to_Manufacture',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Product].[Manufacture Time].[Subcategory] PROPERTIES
+    FIELDNAME=Category, ALIAS=Category, USAGE=A11, ACTUAL=A11,
+      TITLE='Category',
+      REFERENCE=LOCALAW1.Subcategory, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Category1, ALIAS=Category, USAGE=A11, ACTUAL=A11,
+      TITLE='Category',
+      WITHIN='*[Product].[Product Categories]',
+      PROPERTY=CAPTION,  $
+    FIELDNAME=Subcategory1, ALIAS=Subcategory, USAGE=A17, ACTUAL=A17,
+      TITLE='Subcategory',
+      WITHIN='Category1',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Product].[Product Categories].[Subcategory] PROPERTIES
+    FIELDNAME=Category2, ALIAS=Category, USAGE=A11, ACTUAL=A11,
+      TITLE='Category',
+      REFERENCE=Subcategory1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Product, ALIAS=Product, USAGE=A32, ACTUAL=A32,
+      TITLE='Product',
+      WITHIN='Subcategory1',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Product].[Product Categories].[Product] PROPERTIES
+    FIELDNAME=Model_Name, ALIAS='Model Name', USAGE=A27, ACTUAL=A27,
+      TITLE='Model Name',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Style, ALIAS=Style, USAGE=A14, ACTUAL=A14,
+      TITLE='Style',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Class, ALIAS=Class, USAGE=A14, ACTUAL=A14,
+      TITLE='Class',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Dealer_Price, ALIAS='Dealer Price', USAGE=A9, ACTUAL=A9,
+      TITLE='Dealer Price',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Days_to_Manufacture1, ALIAS='Days to Manufacture', USAGE=A1, ACTUAL=A1,
+      TITLE='Days to Manufacture',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Weight, ALIAS=Weight, USAGE=A7, ACTUAL=A7,
+      TITLE='Weight',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Size_Range, ALIAS='Size Range', USAGE=A8, ACTUAL=A8,
+      TITLE='Size Range',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Size, ALIAS=Size, USAGE=A2, ACTUAL=A2,
+      TITLE='Size',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=List_Price, ALIAS='List Price', USAGE=A9, ACTUAL=A9,
+      TITLE='List Price',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Reorder_Point, ALIAS='Reorder Point', USAGE=A3, ACTUAL=A3,
+      TITLE='Reorder Point',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Safety_Stock_Level, ALIAS='Safety Stock Level', USAGE=A3, ACTUAL=A3,
+      TITLE='Safety Stock Level',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Color, ALIAS=Color, USAGE=A12, ACTUAL=A12,
+      TITLE='Color',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Standard_Cost, ALIAS='Standard Cost', USAGE=A9, ACTUAL=A9,
+      TITLE='Standard Cost',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Subcategory2, ALIAS=Subcategory, USAGE=A17, ACTUAL=A17,
+      TITLE='Subcategory',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Status, ALIAS=Status, USAGE=A10, ACTUAL=A10,
+      TITLE='Status',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Start_Date, ALIAS='Start Date', USAGE=A12, ACTUAL=A12,
+      TITLE='Start Date',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=End_Date, ALIAS='End Date', USAGE=A13, ACTUAL=A13,
+      TITLE='End Date',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Product_Key, ALIAS='Product Key', USAGE=A10, ACTUAL=A10,
+      TITLE='Product Key',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Large_Photo, ALIAS='Large Photo', USAGE=A8, ACTUAL=A8,
+      TITLE='Large Photo',
+      REFERENCE=LOCALAW1.Product, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Product_Product_Categories_SETS, USAGE=A18, ACTUAL=A18,
+      TITLE='Product Product Categories Sets',
+      REFERENCE='*[Product].[Product Categories]', PROPERTY=SETS,  $
+ 
+ 
+    FIELDNAME=Category3, ALIAS=Category, USAGE=A11, ACTUAL=A11,
+      TITLE='Category',
+      WITHIN='*[Product].[Product Model Categories]',
+      PROPERTY=CAPTION,  $
+    FIELDNAME=Subcategory3, ALIAS=Subcategory, USAGE=A17, ACTUAL=A17,
+      TITLE='Subcategory',
+      WITHIN='Category3',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Product].[Product Model Categories].[Subcategory] PROPERTIES
+    FIELDNAME=Category4, ALIAS=Category, USAGE=A11, ACTUAL=A11,
+      TITLE='Category',
+      REFERENCE=Subcategory3, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Model, ALIAS=Model, USAGE=A27, ACTUAL=A27,
+      TITLE='Model',
+      WITHIN='Subcategory3',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Product].[Product Model Categories].[Model] PROPERTIES
+    FIELDNAME=Subcategory4, ALIAS=Subcategory, USAGE=A17, ACTUAL=A17,
+      TITLE='Subcategory',
+      REFERENCE=LOCALAW1.Model, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Product_Line, ALIAS='Product Line', USAGE=A10, ACTUAL=A10,
+      TITLE='Product Line',
+      REFERENCE=LOCALAW1.Model, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Product_Line1, ALIAS='Product Line', USAGE=A10, ACTUAL=A10,
+      TITLE='Product Line',
+      WITHIN='*[Product].[Product Model Lines]',
+      PROPERTY=CAPTION,  $
+    FIELDNAME=Model1, ALIAS=Model, USAGE=A27, ACTUAL=A27,
+      TITLE='Model',
+      WITHIN='Product_Line1',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Product].[Product Model Lines].[Model] PROPERTIES
+    FIELDNAME=Subcategory5, ALIAS=Subcategory, USAGE=A17, ACTUAL=A17,
+      TITLE='Subcategory',
+      REFERENCE=Model1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Product_Line2, ALIAS='Product Line', USAGE=A10, ACTUAL=A10,
+      TITLE='Product Line',
+      REFERENCE=Model1, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Safety_Stock_Level1, ALIAS='Safety Stock Level', USAGE=A4, ACTUAL=A4,
+      TITLE='Safety Stock Level',
+      WITHIN='*[Product].[Stock Level]',
+      PROPERTY=CAPTION,  $
+    FIELDNAME=Product1, ALIAS=Product, USAGE=A32, ACTUAL=A32,
+      TITLE='Product',
+      WITHIN='Safety_Stock_Level1',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Product].[Stock Level].[Product] PROPERTIES
+    FIELDNAME=Model_Name1, ALIAS='Model Name', USAGE=A27, ACTUAL=A27,
+      TITLE='Model Name',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Style1, ALIAS=Style, USAGE=A14, ACTUAL=A14,
+      TITLE='Style',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Class1, ALIAS=Class, USAGE=A14, ACTUAL=A14,
+      TITLE='Class',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Dealer_Price1, ALIAS='Dealer Price', USAGE=A9, ACTUAL=A9,
+      TITLE='Dealer Price',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Days_to_Manufacture2, ALIAS='Days to Manufacture', USAGE=A1, ACTUAL=A1,
+      TITLE='Days to Manufacture',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Weight1, ALIAS=Weight, USAGE=A7, ACTUAL=A7,
+      TITLE='Weight',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Size_Range1, ALIAS='Size Range', USAGE=A8, ACTUAL=A8,
+      TITLE='Size Range',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Size1, ALIAS=Size, USAGE=A2, ACTUAL=A2,
+      TITLE='Size',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=List_Price1, ALIAS='List Price', USAGE=A9, ACTUAL=A9,
+      TITLE='List Price',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Reorder_Point1, ALIAS='Reorder Point', USAGE=A3, ACTUAL=A3,
+      TITLE='Reorder Point',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Safety_Stock_Level2, ALIAS='Safety Stock Level', USAGE=A3, ACTUAL=A3,
+      TITLE='Safety Stock Level',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Color1, ALIAS=Color, USAGE=A12, ACTUAL=A12,
+      TITLE='Color',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Standard_Cost1, ALIAS='Standard Cost', USAGE=A9, ACTUAL=A9,
+      TITLE='Standard Cost',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Subcategory6, ALIAS=Subcategory, USAGE=A17, ACTUAL=A17,
+      TITLE='Subcategory',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Status1, ALIAS=Status, USAGE=A10, ACTUAL=A10,
+      TITLE='Status',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Start_Date1, ALIAS='Start Date', USAGE=A12, ACTUAL=A12,
+      TITLE='Start Date',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=End_Date1, ALIAS='End Date', USAGE=A13, ACTUAL=A13,
+      TITLE='End Date',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Product_Key1, ALIAS='Product Key', USAGE=A10, ACTUAL=A10,
+      TITLE='Product Key',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Large_Photo1, ALIAS='Large Photo', USAGE=A8, ACTUAL=A8,
+      TITLE='Large Photo',
+      REFERENCE=Product1, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Account1, ALIAS=Account, USAGE=A38, ACTUAL=A38,
+      TITLE='Account',
+      WITHIN='*[Account].[Account]',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Account].[Account].[Account] PROPERTIES
+    FIELDNAME=Account_Type1, ALIAS='Account Type', USAGE=A12, ACTUAL=A12,
+      TITLE='Account Type',
+      REFERENCE=Account1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Accounts2, ALIAS=Accounts, USAGE=A29, ACTUAL=A29,
+      TITLE='Accounts',
+      REFERENCE=Account1, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Account_Number1, ALIAS='Account Number', USAGE=A4, ACTUAL=A4,
+      TITLE='Account Number',
+      REFERENCE=Account1, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Account_Number21, ALIAS='Account Number', USAGE=A4, ACTUAL=A4,
+      TITLE='Account Number',
+      WITHIN='*[Account].[Account Number]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Account_Type21, ALIAS='Account Type', USAGE=A12, ACTUAL=A12,
+      TITLE='Account Type',
+      WITHIN='*[Account].[Account Type]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Address11, ALIAS=Address, USAGE=A33, ACTUAL=A33,
+      TITLE='Address',
+      WITHIN='*[Customer].[Address]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=City21, ALIAS=City, USAGE=A21, ACTUAL=A21,
+      TITLE='City',
+      WITHIN='*[Customer].[City]',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Customer].[City].[City] PROPERTIES
+    FIELDNAME=State_Province2, ALIAS=State-Province, USAGE=A19, ACTUAL=A19,
+      TITLE='State-Province',
+      REFERENCE=City21, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Commute_Distance11, ALIAS='Commute Distance', USAGE=A10, ACTUAL=A10,
+      TITLE='Commute Distance',
+      WITHIN='*[Customer].[Commute Distance]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Country21, ALIAS=Country, USAGE=A14, ACTUAL=A14,
+      TITLE='Country',
+      WITHIN='*[Customer].[Country]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Customer11, ALIAS=Customer, USAGE=A32, ACTUAL=A32,
+      TITLE='Customer',
+      WITHIN='*[Customer].[Customer]',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Customer].[Customer].[Customer] PROPERTIES
+    FIELDNAME=Date_of_First_Purchase1, ALIAS='Date of First Purchase', USAGE=A18, ACTUAL=A18,
+      TITLE='Date of First Purchase',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Phone1, ALIAS=Phone, USAGE=A19, ACTUAL=A19,
+      TITLE='Phone',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Number_of_Cars_Owned1, ALIAS='Number of Cars Owned', USAGE=A1, ACTUAL=A1,
+      TITLE='Number of Cars Owned',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Occupation1, ALIAS=Occupation, USAGE=A14, ACTUAL=A14,
+      TITLE='Occupation',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Education1, ALIAS=Education, USAGE=A19, ACTUAL=A19,
+      TITLE='Education',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Number_of_Children_At_Home1, ALIAS='Number of Children At Home', USAGE=A1, ACTUAL=A1,
+      TITLE='Number of Children At Home',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Total_Children1, ALIAS='Total Children', USAGE=A1, ACTUAL=A1,
+      TITLE='Total Children',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Yearly_Income1, ALIAS='Yearly Income', USAGE=A33, ACTUAL=A33,
+      TITLE='Yearly Income',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Email_Address1, ALIAS='Email Address', USAGE=A33, ACTUAL=A33,
+      TITLE='Email Address',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Marital_Status1, ALIAS='Marital Status', USAGE=A7, ACTUAL=A7,
+      TITLE='Marital Status',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Gender1, ALIAS=Gender, USAGE=A6, ACTUAL=A6,
+      TITLE='Gender',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Home_Owner1, ALIAS='Home Owner', USAGE=A3, ACTUAL=A3,
+      TITLE='Home Owner',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Commute_Distance2, ALIAS='Commute Distance', USAGE=A10, ACTUAL=A10,
+      TITLE='Commute Distance',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Postal_Code2, ALIAS='Postal Code', USAGE=A10, ACTUAL=A10,
+      TITLE='Postal Code',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Address2, ALIAS=Address, USAGE=A33, ACTUAL=A33,
+      TITLE='Address',
+      REFERENCE=Customer11, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Date_of_First_Purchase21, ALIAS='Date of First Purchase', USAGE=A18, ACTUAL=A18,
+      TITLE='Date of First Purchase',
+      WITHIN='*[Customer].[Date of First Purchase]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Education21, ALIAS=Education, USAGE=A19, ACTUAL=A19,
+      TITLE='Education',
+      WITHIN='*[Customer].[Education]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Email_Address21, ALIAS='Email Address', USAGE=A33, ACTUAL=A33,
+      TITLE='Email Address',
+      WITHIN='*[Customer].[Email Address]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Gender21, ALIAS=Gender, USAGE=A6, ACTUAL=A6,
+      TITLE='Gender',
+      WITHIN='*[Customer].[Gender]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Home_Owner21, ALIAS='Home Owner', USAGE=A3, ACTUAL=A3,
+      TITLE='Home Owner',
+      WITHIN='*[Customer].[Home Owner]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Marital_Status21, ALIAS='Marital Status', USAGE=A7, ACTUAL=A7,
+      TITLE='Marital Status',
+      WITHIN='*[Customer].[Marital Status]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Number_of_Cars_Owned21, ALIAS='Number of Cars Owned', USAGE=A1, ACTUAL=A1,
+      TITLE='Number of Cars Owned',
+      WITHIN='*[Customer].[Number of Cars Owned]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Number_of_Children_At_Home21, ALIAS='Number of Children At Home', USAGE=A1, ACTUAL=A1,
+      TITLE='Number of Children At Home',
+      WITHIN='*[Customer].[Number of Children At Home]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Occupation21, ALIAS=Occupation, USAGE=A14, ACTUAL=A14,
+      TITLE='Occupation',
+      WITHIN='*[Customer].[Occupation]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Phone21, ALIAS=Phone, USAGE=A19, ACTUAL=A19,
+      TITLE='Phone',
+      WITHIN='*[Customer].[Phone]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Postal_Code31, ALIAS='Postal Code', USAGE=A10, ACTUAL=A10,
+      TITLE='Postal Code',
+      WITHIN='*[Customer].[Postal Code]',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Customer].[Postal Code].[Postal Code] PROPERTIES
+    FIELDNAME=City3, ALIAS=City, USAGE=A21, ACTUAL=A21,
+      TITLE='City',
+      REFERENCE=Postal_Code31, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=State_Province31, ALIAS=State-Province, USAGE=A19, ACTUAL=A19,
+      TITLE='State-Province',
+      WITHIN='*[Customer].[State-Province]',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Customer].[State-Province].[State-Province] PROPERTIES
+    FIELDNAME=Country3, ALIAS=Country, USAGE=A14, ACTUAL=A14,
+      TITLE='Country',
+      REFERENCE=State_Province31, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Total_Children21, ALIAS='Total Children', USAGE=A1, ACTUAL=A1,
+      TITLE='Total Children',
+      WITHIN='*[Customer].[Total Children]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Yearly_Income21, ALIAS='Yearly Income', USAGE=A33, ACTUAL=A33,
+      TITLE='Yearly Income',
+      WITHIN='*[Customer].[Yearly Income]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Calendar_Quarter_of_Year11, ALIAS='Calendar Quarter of Year', USAGE=A5, ACTUAL=A5,
+      TITLE='Calendar Quarter of Year',
+      WITHIN='*[Date].[Calendar Quarter of Year]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Calendar_Semester_of_Year11, ALIAS='Calendar Semester of Year', USAGE=A5, ACTUAL=A5,
+      TITLE='Calendar Semester of Year',
+      WITHIN='*[Date].[Calendar Semester of Year]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Calendar_Year21, ALIAS='Calendar Year', USAGE=A7, ACTUAL=A7,
+      TITLE='Calendar Year',
+      WITHIN='*[Date].[Calendar Year]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Date21, ALIAS=Date, USAGE=A18, ACTUAL=A18,
+      TITLE='Date',
+      WITHIN='*[Date].[Date]',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Date].[Date].[Date] PROPERTIES
+    FIELDNAME=Day_of_Week2, ALIAS='Day of Week', USAGE=A1, ACTUAL=A1,
+      TITLE='Day of Week',
+      REFERENCE=Date21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Day_Name2, ALIAS='Day Name', USAGE=A9, ACTUAL=A9,
+      TITLE='Day Name',
+      REFERENCE=Date21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Day_of_Month2, ALIAS='Day of Month', USAGE=A2, ACTUAL=A2,
+      TITLE='Day of Month',
+      REFERENCE=Date21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Day_of_Year2, ALIAS='Day of Year', USAGE=A3, ACTUAL=A3,
+      TITLE='Day of Year',
+      REFERENCE=Date21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Week_of_Year2, ALIAS='Week of Year', USAGE=A2, ACTUAL=A2,
+      TITLE='Week of Year',
+      REFERENCE=Date21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Month_Name2, ALIAS='Month Name', USAGE=A14, ACTUAL=A14,
+      TITLE='Month Name',
+      REFERENCE=Date21, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Day_Name31, ALIAS='Day Name', USAGE=A9, ACTUAL=A9,
+      TITLE='Day Name',
+      WITHIN='*[Date].[Day Name]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Day_of_Month31, ALIAS='Day of Month', USAGE=A2, ACTUAL=A2,
+      TITLE='Day of Month',
+      WITHIN='*[Date].[Day of Month]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Day_of_Week31, ALIAS='Day of Week', USAGE=A1, ACTUAL=A1,
+      TITLE='Day of Week',
+      WITHIN='*[Date].[Day of Week]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Day_of_Year31, ALIAS='Day of Year', USAGE=A3, ACTUAL=A3,
+      TITLE='Day of Year',
+      WITHIN='*[Date].[Day of Year]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Fiscal_Quarter_of_Year11, ALIAS='Fiscal Quarter of Year', USAGE=A5, ACTUAL=A5,
+      TITLE='Fiscal Quarter of Year',
+      WITHIN='*[Date].[Fiscal Quarter of Year]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Fiscal_Semester_of_Year11, ALIAS='Fiscal Semester of Year', USAGE=A5, ACTUAL=A5,
+      TITLE='Fiscal Semester of Year',
+      WITHIN='*[Date].[Fiscal Semester of Year]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Fiscal_Year21, ALIAS='Fiscal Year', USAGE=A7, ACTUAL=A7,
+      TITLE='Fiscal Year',
+      WITHIN='*[Date].[Fiscal Year]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Month_of_Year21, ALIAS='Month of Year', USAGE=A9, ACTUAL=A9,
+      TITLE='Month of Year',
+      WITHIN='*[Date].[Month of Year]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Week_of_Year31, ALIAS='Week of Year', USAGE=A2, ACTUAL=A2,
+      TITLE='Week of Year',
+      WITHIN='*[Date].[Week of Year]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Currency_Code11, ALIAS='Currency Code', USAGE=A3, ACTUAL=A3,
+      TITLE='Currency Code',
+      WITHIN='*[Organization].[Currency Code]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Category51, ALIAS=Category, USAGE=A11, ACTUAL=A11,
+      TITLE='Category',
+      WITHIN='*[Product].[Category]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Class21, ALIAS=Class, USAGE=A14, ACTUAL=A14,
+      TITLE='Class',
+      WITHIN='*[Product].[Class]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Color21, ALIAS=Color, USAGE=A12, ACTUAL=A12,
+      TITLE='Color',
+      WITHIN='*[Product].[Color]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Days_to_Manuf1, ALIAS='Days to Manuf', USAGE=A1, ACTUAL=A1,
+      TITLE='Days to Manuf',
+      WITHIN='*[Product].[Days to Manuf]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Dealer_Price21, ALIAS='Dealer Price', USAGE=A9, ACTUAL=A9,
+      TITLE='Dealer Price',
+      WITHIN='*[Product].[Dealer Price]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=End_Date21, ALIAS='End Date', USAGE=A13, ACTUAL=A13,
+      TITLE='End Date',
+      WITHIN='*[Product].[End Date]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Large_Photo21, ALIAS='Large Photo', USAGE=A10, ACTUAL=A10,
+      TITLE='Large Photo',
+      WITHIN='*[Product].[Large Photo]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=List_Price21, ALIAS='List Price', USAGE=A9, ACTUAL=A9,
+      TITLE='List Price',
+      WITHIN='*[Product].[List Price]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Model_Name21, ALIAS='Model Name', USAGE=A27, ACTUAL=A27,
+      TITLE='Model Name',
+      WITHIN='*[Product].[Model Name]',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Product].[Model Name].[Model Name] PROPERTIES
+    FIELDNAME=Subcategory7, ALIAS=Subcategory, USAGE=A17, ACTUAL=A17,
+      TITLE='Subcategory',
+      REFERENCE=Model_Name21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Product_Line3, ALIAS='Product Line', USAGE=A10, ACTUAL=A10,
+      TITLE='Product Line',
+      REFERENCE=Model_Name21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Product_Model_Name_SETS, USAGE=A26, ACTUAL=A26,
+      TITLE='Product Model Name Sets',
+      REFERENCE='*[Product].[Model Name]', PROPERTY=SETS,  $
+ 
+ 
+    FIELDNAME=Product21, ALIAS=Product, USAGE=A32, ACTUAL=A32,
+      TITLE='Product',
+      WITHIN='*[Product].[Product]',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Product].[Product].[Product] PROPERTIES
+    FIELDNAME=Model_Name3, ALIAS='Model Name', USAGE=A27, ACTUAL=A27,
+      TITLE='Model Name',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Style2, ALIAS=Style, USAGE=A14, ACTUAL=A14,
+      TITLE='Style',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Class3, ALIAS=Class, USAGE=A14, ACTUAL=A14,
+      TITLE='Class',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Dealer_Price3, ALIAS='Dealer Price', USAGE=A9, ACTUAL=A9,
+      TITLE='Dealer Price',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Days_to_Manufacture3, ALIAS='Days to Manufacture', USAGE=A1, ACTUAL=A1,
+      TITLE='Days to Manufacture',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Weight2, ALIAS=Weight, USAGE=A7, ACTUAL=A7,
+      TITLE='Weight',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Size_Range2, ALIAS='Size Range', USAGE=A8, ACTUAL=A8,
+      TITLE='Size Range',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Size2, ALIAS=Size, USAGE=A2, ACTUAL=A2,
+      TITLE='Size',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=List_Price3, ALIAS='List Price', USAGE=A9, ACTUAL=A9,
+      TITLE='List Price',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Reorder_Point2, ALIAS='Reorder Point', USAGE=A3, ACTUAL=A3,
+      TITLE='Reorder Point',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Safety_Stock_Level3, ALIAS='Safety Stock Level', USAGE=A3, ACTUAL=A3,
+      TITLE='Safety Stock Level',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Color3, ALIAS=Color, USAGE=A12, ACTUAL=A12,
+      TITLE='Color',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Standard_Cost2, ALIAS='Standard Cost', USAGE=A9, ACTUAL=A9,
+      TITLE='Standard Cost',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Subcategory8, ALIAS=Subcategory, USAGE=A17, ACTUAL=A17,
+      TITLE='Subcategory',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Status2, ALIAS=Status, USAGE=A10, ACTUAL=A10,
+      TITLE='Status',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Start_Date2, ALIAS='Start Date', USAGE=A12, ACTUAL=A12,
+      TITLE='Start Date',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=End_Date3, ALIAS='End Date', USAGE=A13, ACTUAL=A13,
+      TITLE='End Date',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Product_Key2, ALIAS='Product Key', USAGE=A10, ACTUAL=A10,
+      TITLE='Product Key',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+    FIELDNAME=Large_Photo3, ALIAS='Large Photo', USAGE=A8, ACTUAL=A8,
+      TITLE='Large Photo',
+      REFERENCE=Product21, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Product_Key31, ALIAS='Product Key', USAGE=A10, ACTUAL=A10,
+      TITLE='Product Key',
+      WITHIN='*[Product].[Product Key]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Product_Line41, ALIAS='Product Line', USAGE=A10, ACTUAL=A10,
+      TITLE='Product Line',
+      WITHIN='*[Product].[Product Line]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Reorder_Point31, ALIAS='Reorder Point', USAGE=A3, ACTUAL=A3,
+      TITLE='Reorder Point',
+      WITHIN='*[Product].[Reorder Point]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Safety_Stock_Level41, ALIAS='Safety Stock Level', USAGE=A4, ACTUAL=A4,
+      TITLE='Safety Stock Level',
+      WITHIN='*[Product].[Safety Stock Level]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Size31, ALIAS=Size, USAGE=A2, ACTUAL=A2,
+      TITLE='Size',
+      WITHIN='*[Product].[Size]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Size_Range31, ALIAS='Size Range', USAGE=A8, ACTUAL=A8,
+      TITLE='Size Range',
+      WITHIN='*[Product].[Size Range]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Standard_Cost31, ALIAS='Standard Cost', USAGE=A9, ACTUAL=A9,
+      TITLE='Standard Cost',
+      WITHIN='*[Product].[Standard Cost]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Start_Date31, ALIAS='Start Date', USAGE=A12, ACTUAL=A12,
+      TITLE='Start Date',
+      WITHIN='*[Product].[Start Date]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Status31, ALIAS=Status, USAGE=A10, ACTUAL=A10,
+      TITLE='Status',
+      WITHIN='*[Product].[Status]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Style31, ALIAS=Style, USAGE=A14, ACTUAL=A14,
+      TITLE='Style',
+      WITHIN='*[Product].[Style]',
+      PROPERTY=CAPTION,  $
+ 
+ 
+    FIELDNAME=Subcategory91, ALIAS=Subcategory, USAGE=A17, ACTUAL=A17,
+      TITLE='Subcategory',
+      WITHIN='*[Product].[Subcategory]',
+      PROPERTY=CAPTION,  $
+ 
+$ LEVEL [Product].[Subcategory].[Subcategory] PROPERTIES
+    FIELDNAME=Category6, ALIAS=Category, USAGE=A11, ACTUAL=A11,
+      TITLE='Category',
+      REFERENCE=Subcategory91, PROPERTY=ATTRIBUTE,  $
+ 
+ 
+    FIELDNAME=Weight31, ALIAS=Weight, USAGE=A7, ACTUAL=A7,
+      TITLE='Weight',
+      WITHIN='*[Product].[Weight]',
+      PROPERTY=CAPTION,  $

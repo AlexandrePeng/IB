@@ -1,0 +1,10 @@
+/* $Revision:   1.0  $: */
+.text{font-family:Arial,Helvetica,Sans-Serif;font-size:11px;color:#FFFFFF;}
+BODY{background-color:#295163;}
+.bg1{background-color:#295163;background-image:url();font-family:Arial,Helvetica,Sans-Serif;font-size:11px;text-decoration:none;font-weight:600;}
+.bg2{background-color:#295163;}
+A{font-family:Arial,Helvetica,Sans-Serif;font-size:11px;text-decoration:none;font-weight:600;}
+A:HOVER{color:#999999;}
+A:VISITED{color:#FFFFFF;}
+A:LINK{color:#FFFFFF;}
+A:ACTIVE{color:#000000;}

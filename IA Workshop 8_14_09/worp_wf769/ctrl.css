@@ -1,0 +1,12 @@
+/* $Revision:   1.1  $: */
+/* worp1/ctrl.css */
+.ctrl {
+        background-color : #005299;
+        color : #ffffff;
+        font-family : Arial, Helvetica, Sans-Serif;
+        font-style : Plain;
+        font-weight : 600;
+        font-size : 11px;}
+A {
+        text-decoration : none; 
+}
